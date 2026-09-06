@@ -6,6 +6,9 @@ import Card from "../../components/Card";
 import StatusBadge from "../../components/StatusBadge";
 import { getCurrentUser } from "../../utils/auth";
 import { getOfficerProfile, getBids, getBidderProfile } from "../../services/api";
+import RiskDistributionChart from "../../components/RiskDistributionChart";
+import RiskShareDonut from "../../components/RiskShareDonut";
+import RiskInsightsPanel from "../../components/RiskInsightsPanel";
 
 function riskColor(level) {
   if (level === "LOW") return "green";
@@ -64,6 +67,14 @@ export default function BidComparisonPage() {
       <p className="text-sm text-ink-600 mb-6">
         Compare all bids submitted for this tender side by side.
       </p>
+
+      {!loading && bids.length > 0 && (
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 mb-6">
+          <RiskDistributionChart bids={bids} />
+          <RiskShareDonut bids={bids} />
+          <RiskInsightsPanel bids={bids} />
+        </div>
+      )}
 
       {loading ? (
         <p className="text-sm text-ink-600">Loading bids...</p>
