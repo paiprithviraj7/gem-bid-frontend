@@ -2,7 +2,7 @@ import { Search, Bell, User } from "lucide-react";
 
 export default function Navbar({ userName = "User", notificationCount = 0 }) {
   return (
-    <header className="h-16 bg-white border-b border-border flex items-center justify-between px-6">
+      <header className="h-16 bg-white border-b border-border shadow-card flex items-center justify-between px-6">
       <div className="flex items-center gap-2 max-w-md w-full">
         <Search className="w-4 h-4 text-ink-400 shrink-0" />
         <input

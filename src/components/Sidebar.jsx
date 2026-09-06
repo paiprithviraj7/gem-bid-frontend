@@ -62,10 +62,10 @@ export default function Sidebar({ role }) {
             key={to}
             to={to}
             className={({ isActive }) =>
-              `flex items-center gap-3 px-3 py-2.5 rounded-badge text-sm font-medium transition-colors ${
+              `relative flex items-center gap-3 px-3 py-2.5 rounded-badge text-sm font-medium transition-colors duration-200 ${
                 isActive
-                  ? "bg-navy-700 text-white"
-                  : "text-navy-100 hover:bg-navy-800"
+                  ? "bg-navy-700/60 text-white before:absolute before:left-0 before:top-1.5 before:bottom-1.5 before:w-1 before:rounded-full before:bg-white"
+                  : "text-navy-100 hover:bg-navy-800/60"
               }`
             }
           >

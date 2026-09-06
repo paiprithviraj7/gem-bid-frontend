@@ -10,7 +10,7 @@ const STATUS_STYLES = {
 export default function StatusBadge({ status = "neutral", children }) {
   return (
     <span
-      className={`inline-flex items-center px-2.5 py-1 rounded-badge text-xs font-medium ${STATUS_STYLES[status]}`}
+      className={`inline-flex items-center px-2.5 py-1 rounded-badge text-xs font-semibold tracking-wide ${STATUS_STYLES[status]}`}
     >
       {children}
     </span>
